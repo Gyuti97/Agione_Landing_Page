@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-gold-50: #fff9e6;
+  --color-gold-100: #fff0b3;
+  --color-gold-200: #ffe166;
+  --color-gold-300: #ffd700;
+  --color-gold-400: #e6c200;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b8860b;
+  --color-gold-700: #8b6508;
+  
+  --color-charcoal: #0f0f0f;
+  --color-graphite: #1a1a1a;
+  --color-night: #020202;
+}
+
+@layer base {
+  body {
+    @apply bg-night text-zinc-100 antialiased selection:bg-gold-500/30 selection:text-gold-200 cursor-default font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight uppercase;
+  }
+}
+
+.gold-glow {
+  box-shadow: 0 0 50px -10px rgba(212, 175, 55, 0.3);
+}
+
+.gold-chrome {
+  background: linear-gradient(
+    to bottom,
+    #bf953f 0%,
+    #fcf6ba 15%,
+    #b38728 35%,
+    #fbf5b7 55%,
+    #aa771c 85%,
+    #bf953f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 8s linear infinite;
+}
+
+.gold-chrome-bg {
+  background: linear-gradient(
+    135deg,
+    #bf953f 0%,
+    #fcf6ba 20%,
+    #b38728 40%,
+    #fbf5b7 60%,
+    #aa771c 80%,
+    #bf953f 100%
+  );
+  background-size: 200% auto;
+  animation: shine 8s linear infinite;
+}
+
+.chrome-card {
+  @apply relative bg-gradient-to-br from-zinc-900/40 to-black border border-white/5 hover:border-gold-500/30 transition-all duration-700;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.gold-chrome-border {
+  border-image: linear-gradient(
+    135deg, 
+    #bf953f 0%, 
+    #fcf6ba 25%, 
+    #b38728 50%, 
+    #fbf5b7 75%, 
+    #aa771c 100%
+  ) 1;
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #050505 100%);
+}
+
+.text-editorial {
+  @apply font-serif italic tracking-normal lowercase;
+}
+
+.art-deco-line {
+  @apply h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent w-full;
+}
